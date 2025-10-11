@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Sorath Masala</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body class="bg-theme">
+    <div id="menubar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <br><br><br><h1 class="text-4xl md:text-5xl font-bold mb-6">All Products</h1>
+            <div class="w-24 h-1 bg-primary-500 mx-auto"></div>
+            <br><br><p class="text-xl max-w-2xl mx-auto">Authentic spices and masala blends crafted with passion</p>
+            <br><br><br>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <!-- All Products Gallery -->
+    <section id="all-products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary-900 mb-4">All Products</h2>
+                <div class="w-24 h-1 bg-primary-500 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Browse our full range of masala products</p>
+            </div> -->
+
+            <!-- Gallery grid -->
+            <!-- show 2 cols mobile, 3 small, 4 md, 5 lg -->
+            <div id="gallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- Custom Orders CTA -->
+    <!-- <section class="py-16 bg-gradient-to-r from-emerald-700 to-emerald-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Can't Find What You're Looking For?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Contact us for custom spice blends and bulk orders</p>
+            <a href="contact.html" class="bg-white text-emerald-800 hover:bg-emerald-100 font-bold py-3 px-8 rounded-full transition duration-300">
+                Contact Us
+            </a>
+        </div>
+    </section> -->
+
+    <div id="footer-placeholder"></div>
+
+    <style>
+        /* Gallery image fade-in */
+        @keyframes gallery-fade-in-up {
+            from { opacity: 0; transform: translateY(16px) scale(.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .gallery-item { opacity: 0; transform: translateY(16px); }
+        .gallery-item.show { animation: gallery-fade-in-up 600ms ease-out forwards; }
+
+        /* Card styling for each product */
+        .product-card { background: var(--tw-bg-opacity, #fff); border-radius: 8px; overflow: hidden; box-shadow: 0 6px 18px rgba(15,23,42,0.06); border: 1px solid rgba(15,23,42,0.04); display: flex; flex-direction: column; }
+    /* Responsive media heights: mobile -> larger on bigger screens */
+    .product-card .media { width: 100%; height: 120px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f8fafc; }
+    @media (min-width: 640px) { .product-card .media { height: 140px; } }
+    @media (min-width: 768px) { .product-card .media { height: 160px; } }
+    @media (min-width: 1024px) { .product-card .media { height: 180px; } }
+    @media (min-width: 1280px) { .product-card .media { height: 200px; } }
+    .product-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .product-card .caption { padding: 10px 12px; background: white; text-align: center; font-weight: 600; color: #1f2937; font-size: 0.95rem; }
+        .product-card .caption small { display:block; font-weight:400; font-size:0.85rem; color: #6b7280; margin-top:4px; }
+        .product-card:hover { transform: translateY(-6px); transition: transform 220ms ease; }
+    </style>
+
+    <script>
+        // Build gallery from images in the 'Masala Image' folder.
+        (function(){
+            const images = [
+                "adadiya box moc 2.jpg",
+                "amchur.jpg",
+                "bataka vada.jpg",
+                "bharel ravaiya.jpg",
+                "bhungra bateta.jpg",
+                "black salt.jpg",
+                "chat masala.jpg",
+                "chevda.jpg",
+                "chhas bottle.jpg",
+                "chhas.jpg",
+                "chhole.jpg",
+                "chicken biryani.jpg",
+                "chiilli flakes.jpg",
+                "chiken 1.jpg",
+                "chiken biryani.jpg",
+                "chiken dana.jpg",
+                "chiken.jpg",
+                "chilli powder new.jpg",
+                "chutney masala.jpg",
+                "coconut water.jpg",
+                "coriander cumin new.jpg",
+                "coriander cumin.jpg",
+                "corn flour.jpg",
+                "custard powder.jpg",
+                "dabeli.jpg",
+                "dal sak masala new.jpg",
+                "dal sak masala.jpg",
+                "dalfry.jpg",
+                "egg curry.jpg",
+                "farali.jpg",
+                "fish.jpg",
+                "fulavada.jpg",
+                "garam masala 1.jpg",
+                "garam masala.jpg",
+                "hing.jpg",
+                "jaljeera.jpg",
+                "kadhi.jpg",
+                "kaju kari.jpg",
+                "kava.jpg",
+                "khaman.jpg",
+                "khichdi.jpg",
+                "limbu pani.jpg",
+                "limbu sarbat.jpg",
+                "manchurian.jpg",
+                "marcha aachar.jpg",
+                "mari.jpg",
+                "mojito.jpg",
+                "mutoon 1.jpg",
+                "mutoon.jpg",
+                "oregano.jpg",
+                "paneertika.jpg",
+                "panipuri.jpg",
+                "pasta.jpg",
+                "pavbhaji.jpg",
+                "peri peri.jpg",
+                "pikkle masala 1.jpg",
+                "pikkle masala 2.jpg",
+                "pink salt.jpg",
+                "pizza masala.jpg",
+                "PIZZA.jpg",
+                "poha.jpg",
+                "punjabi.jpg",
+                "punjabi1.jpg",
+                "ragda.jpg",
+                "red chilli.jpg",
+                "sabji masala.jpg",
+                "sabji.jpg",
+                "sahi biryani.jpg",
+                "sambhar.jpg",
+                "samosa.jpg",
+                "sandwich.jpg",
+                "sev mamra.jpg",
+                "sev tameta.jpg",
+                "sev usal.jpg",
+                "sunth.jpg",
+                "tea.jpg",
+                "turmeric powder.jpg",
+                "undhyu.jpg"
+            ];
+
+            const gallery = document.getElementById('gallery');
+            if(!gallery) return;
+
+            images.forEach((file, i) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+
+                // build product card
+                const card = document.createElement('div');
+                card.className = 'product-card';
+
+                const media = document.createElement('div');
+                media.className = 'media';
+
+                const img = document.createElement('img');
+                img.src = encodeURI('Masala Image/' + file);
+                img.loading = 'lazy';
+                // create readable alt and caption from filename
+                const name = file.replace(/\.[^/.]+$/, '').replace(/[-_]+/g, ' ').trim();
+                img.alt = name.charAt(0).toUpperCase() + name.slice(1);
+
+                media.appendChild(img);
+                card.appendChild(media);
+
+                const caption = document.createElement('div');
+                caption.className = 'caption';
+                caption.textContent = img.alt;
+                card.appendChild(caption);
+
+                item.appendChild(card);
+                gallery.appendChild(item);
+            });
+
+            // Trigger fade-in when items reach near the bottom of the viewport
+            const galleryItems = Array.from(gallery.querySelectorAll('.gallery-item'));
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        // stop observing once shown
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                // start the animation when the element is near the bottom of the screen
+                rootMargin: '0px 0px -10% 0px',
+                threshold: 0.01
+            });
+
+            galleryItems.forEach(item => observer.observe(item));
+        })();
+
+            async function injectPartial(id, url){
+            const el = document.getElementById(id);
+            if(!el) return;
+            try{
+                const res = await fetch(url);
+                if(!res.ok) return;
+                const text = await res.text();
+                const temp = document.createElement('div');
+                temp.innerHTML = text;
+                while (temp.firstChild) el.appendChild(temp.firstChild);
+                el.querySelectorAll('script').forEach(oldScript => {
+                    const script = document.createElement('script');
+                    if (oldScript.src) { script.src = oldScript.src; script.async = oldScript.async; }
+                    else { script.textContent = oldScript.textContent; }
+                    oldScript.parentNode.replaceChild(script, oldScript);
+                });
+            }catch(e){ console.warn('Partial load failed', url, e); }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            injectPartial('menubar-placeholder','menubar.html');
+            injectPartial('footer-placeholder','footer.html');
+
+            // Add to cart demo
+            document.querySelectorAll('button').forEach(button => {
+                if (button.textContent.includes('Add to Cart')) {
+                    button.addEventListener('click', function() {
+                        const product = this.closest('div').querySelector('h3').textContent;
+                        alert(product + ' added to cart!');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorath Masala - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body class="bg-theme">
+    <!-- Navigation (injected) -->
+    <div id="menubar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="relative text-white">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('hero.png'); filter: brightness(0.6);"></div>
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="container mx-auto px-4 text-center relative py-24">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">Sorath Masala</h1>
+            <br><p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Premium Quality Spices & Seasonings</p>
+            <br><div class="animate-bounce">
+                <a href="#products" class="btn-primary">Explore Our Products</a>
+            </div>
+            <br><br><br>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-900 mb-4">About Sorath Masala</h2>
+                <div class="w-24 h-1 bg-primary-500 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="logo.jpg" alt="Sorath Masala" class="rounded-lg shadow-lg mx-auto w-full max-w-md">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-primary-700 mb-4">Authentic Flavors, Premium Quality</h3>
+                    <p class="text-gray-700 mb-4">
+                        Sorath Masala is a premium spice company dedicated to bringing authentic flavors to your kitchen. 
+                        With years of expertise in the spice industry, we source the finest ingredients to create our signature blends 
+                        that enhance the taste of any dish.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Our commitment to quality and tradition ensures that every product meets the highest standards, 
+                        delivering rich aromas and exceptional taste that will transform your culinary experience.
+                    </p>
+                    <a href="about.html" class="inline-block bg-primary-700 hover:bg-primary-900 text-white font-bold py-2 px-6 rounded transition duration-300">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Preview -->
+    <section id="products" class="py-16 bg-theme">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-900 mb-4">Our Premium Products</h2>
+                <div class="w-24 h-1 bg-primary-500 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Discover our range of authentic spices and masala blends</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product Preview 1 -->
+                <div class="bg-surface rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105">
+                    <div class="preview-media h-48 bg-primary-200 flex items-center justify-center overflow-hidden">
+                            <img src="Masala Image/garam masala.jpg" alt="Garam Masala" class="w-full h-full object-cover">
+                        </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-primary-900 mb-2">Garam Masala</h3>
+                        <p class="text-gray-600 mb-4">Our signature blend of premium spices for rich, aromatic dishes.</p>
+                    </div>
+                </div>
+
+                <!-- Product Preview 2 -->
+                <div class="bg-surface rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105">
+                    <div class="preview-media h-48 bg-primary-200 flex items-center justify-center overflow-hidden">
+                        <img src="Masala Image/chicken biryani.jpg" alt="Chicken Masala" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-primary-900 mb-2">Chicken Masala</h3>
+                        <p class="text-gray-600 mb-4">A perfect blend for delicious chicken curries with rich aroma.</p>
+                    </div>
+                </div>
+
+                <!-- Product Preview 3 -->
+                <div class="bg-surface rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105">
+                    <div class="preview-media h-48 bg-primary-200 flex items-center justify-center overflow-hidden">
+                        <img src="Masala Image/turmeric powder.jpg" alt="Turmeric Powder" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-primary-900 mb-2">Turmeric Powder</h3>
+                        <p class="text-gray-600 mb-4">Pure turmeric powder with vibrant color and earthy flavor.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="products.html" class="inline-block bg-primary-700 hover:bg-primary-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">Explore All Products</a>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-testimonials">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-900 mb-4">What Our Customers Say</h2>
+                <div class="w-24 h-1 bg-primary-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-primary-500 text-2xl mr-2">★★★★★</div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">
+                        "The quality of Sorath Masala's spices is exceptional. Their garam masala has become an essential 
+                        part of my cooking. The aroma and flavor are unmatched!"
+                    </p>
+                    <p class="font-bold text-primary-700">- Priya Sharma</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-primary-500 text-2xl mr-2">★★★★★</div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">
+                        "I've tried many spice brands, but Sorath Masala stands out for its authenticity and freshness. 
+                        Their customer service is also excellent. Highly recommended!"
+                    </p>
+                    <p class="font-bold text-primary-700">- Rajesh Patel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (injected) -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Inject menubar and footer partials and ensure scripts inside them run
+        async function injectPartial(id, url){
+            const el = document.getElementById(id);
+            if(!el) return;
+            try{
+                const res = await fetch(url);
+                if(!res.ok) return;
+                const text = await res.text();
+                const temp = document.createElement('div');
+                temp.innerHTML = text;
+                // Move nodes into target element
+                while (temp.firstChild) el.appendChild(temp.firstChild);
+                // Re-create scripts so they execute
+                el.querySelectorAll('script').forEach(oldScript => {
+                    const script = document.createElement('script');
+                    if (oldScript.src) {
+                        script.src = oldScript.src;
+                        script.async = oldScript.async;
+                    } else {
+                        script.textContent = oldScript.textContent;
+                    }
+                    oldScript.parentNode.replaceChild(script, oldScript);
+                });
+            }catch(e){ console.warn('Partial load failed', url, e); }
+        }
+
+        document.addEventListener('DOMContentLoaded', function(){
+            injectPartial('menubar-placeholder','menubar.html');
+            injectPartial('footer-placeholder','footer.html');
+
+            // Intersection animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('animate-fade-in-up');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('section > div').forEach(div => observer.observe(div));
+        });
+    </script>
+    
+    <style>
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fade-in 1s ease-out;
+        }
+        
+        .animate-fade-in-up {
+            animation: fade-in-up 0.6s ease-out;
+        }
+
+        /* Preview media responsive heights */
+        .preview-media { height: 180px; }
+        @media (min-width: 640px) { .preview-media { height: 200px; } }
+        @media (min-width: 768px) { .preview-media { height: 220px; } }
+        @media (min-width: 1024px) { .preview-media { height: 260px; } }
+    </style>
+</body>
+</html>

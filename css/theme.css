@@ -1,0 +1,162 @@
+/* Centralized theme for Sorath Masala - Red palette inspired by theme.png */
+:root{
+  --bg: #fff5f5; /* light red tint */
+  --surface: #ffffff;
+  --primary-900: #7f1d1d; /* deep red */
+  --primary-700: #b91c1c; /* strong red */
+  --primary-500: #ef4444; /* accent red */
+  --primary-200: #fecaca; /* soft red */
+  --muted: #6b7280; /* gray for text */
+  /* Footer updated to pale cream background (matches snapshot) */
+  --footer-bg: #fff8ec; /* very light cream */
+  --footer-text: var(--primary-900); /* use deep red for headings/important text */
+  --footer-accent: var(--primary-500);
+  --gold-100: #fffbeb; /* light golden used in contact info (Tailwind amber-100) */
+  --gold-700: #b45309; /* darker gold for text/links (amber-700) */
+}
+
+/* Utility classes to map existing amber-* usages to red palette */
+.bg-theme { background-color: var(--bg); }
+.bg-surface { background-color: var(--surface); }
+.bg-primary-900 { background-color: var(--primary-900); }
+.bg-primary-700 { background-color: var(--primary-700); }
+.bg-primary-500 { background-color: var(--primary-500); }
+.bg-primary-200 { background-color: var(--primary-200); }
+
+.text-primary-900 { color: var(--primary-900); }
+.text-primary-700 { color: var(--primary-700); }
+.text-primary-500 { color: var(--primary-500); }
+.text-muted { color: var(--muted); }
+
+.border-primary-800 { border-color: var(--primary-700); }
+
+.btn-primary {
+  background-color: var(--primary-500);
+  color: #fff;
+  padding: .625rem 1.5rem;
+  border-radius: 9999px;
+  display: inline-block;
+  transition: transform .2s ease, background-color .15s ease;
+}
+.btn-primary:hover{ background-color: var(--primary-700); transform: translateY(-2px);} 
+
+.nav-bg { background-color: var(--primary-700); color: white; }
+.nav-bg a{ color: inherit; }
+.nav-bg a:hover{ color: var(--primary-200); }
+
+/* Golden nav variant (matches contact info light/golden tone) */
+.nav-golden { background-color: var(--gold-100); color: var(--gold-700); }
+.nav-golden a{ color: var(--gold-700); }
+.nav-golden a:hover{ color: var(--primary-700); }
+
+.hero-gradient {
+  background: linear-gradient(90deg, var(--primary-700), var(--primary-900));
+  color: #fff;
+}
+
+.footer-bg { background-color: var(--footer-bg); color: var(--footer-text); padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.footer-bg a{ color: var(--footer-accent); transition: color .16s ease; }
+.footer-bg a:hover{ color: var(--primary-700); }
+.footer-border { border-top: 4px solid rgba(239,68,68,0.08); }
+
+/* Small centered red accent line at top of footer to divide content */
+.footer-bg {
+  position: relative; /* ensure pseudo-element positions correctly */
+}
+.footer-bg::before {
+  content: "";
+  position: absolute;
+  top: 8px; /* distance from the very top of the footer */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96px; /* short centered line matching snapshot */
+  height: 4px;
+  background: var(--footer-accent);
+  border-radius: 4px;
+  box-shadow: 0 2px 0 rgba(239,68,68,0.06);
+}
+
+/* Small helpers used by pages */
+.accent-line { height: 4px; width: 96px; background: var(--primary-500); margin: 0.5rem auto; }
+
+/* Make sure images in header/footer remain circular; make footer brand slightly larger */
+.brand-img { height: 64px; width: 64px; border-radius: 9999px; object-fit: cover; }
+
+/* Testimonials background (light cream/gold) */
+.bg-testimonials { background-color: var(--gold-100); }
+
+/* ===== Menubar: fixed positioning, typography and animations ===== */
+:root {
+  --menu-font: 'Poppins', 'Segoe UI', Roboto, Arial, sans-serif;
+  --menu-size-desktop: 16px;
+  --menu-size-mobile: 18px;
+}
+
+/* Make the golden nav variant fixed to top and elevated */
+.nav-golden {
+  background: linear-gradient(90deg, #fff8ec, #fff7e6); /* soft golden base */
+  color: var(--gold-700);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* Menu item typography */
+.nav-golden a,
+#mobile-menu a {
+  font-family: var(--menu-font);
+  font-size: var(--menu-size-desktop);
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  padding: 6px 4px;
+  transform-origin: center;
+  transition: transform 180ms ease, color 180ms ease, opacity 200ms ease;
+}
+
+/* Entrance animation for menu items (staggered by nth-child in desktop) */
+.nav-golden .container .flex a {
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+  animation: menu-fade-in 380ms ease forwards;
+}
+.nav-golden .container .flex a:nth-child(1){ animation-delay: 120ms; }
+.nav-golden .container .flex a:nth-child(2){ animation-delay: 160ms; }
+.nav-golden .container .flex a:nth-child(3){ animation-delay: 200ms; }
+.nav-golden .container .flex a:nth-child(4){ animation-delay: 240ms; }
+
+@keyframes menu-fade-in {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Hover/active micro interactions */
+.nav-golden a:hover,
+.nav-golden a:focus,
+#mobile-menu a:hover,
+#mobile-menu a:focus {
+  transform: translateY(-2px) scale(1.02);
+  color: #8a3b00;
+  text-decoration: underline;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px){
+  :root{ --menu-size-desktop: var(--menu-size-mobile); }
+  .nav-golden a, #mobile-menu a { font-size: var(--menu-size-mobile); }
+  #mobile-menu a { padding: 10px 6px; }
+}
+
+/* Prevent page content from being hidden under the fixed header. Use common container selectors used in pages. */
+main, .page-content, .container-page, .hero-gradient, .bg-surface {
+  padding-top: 76px; /* adjust if header height changes */
+}
+
+/* Small accessibility: ensure focus outlines are visible */
+.nav-golden a:focus {
+  outline: 3px solid rgba(180,83,9,0.12);
+  outline-offset: 3px;
+}

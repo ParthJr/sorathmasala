@@ -1,0 +1,46 @@
+<!-- Menubar partial: insert into pages via JS -->
+<nav class="nav-golden sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="flex items-center space-x-2">
+      <img src="logo.jpg" alt="Sorath Masala Logo" class="brand-img">
+      <span class="text-2xl font-bold">Sorath Masala</span>
+    </div>
+    <div class="hidden md:flex space-x-6">
+      <a href="index.html" class="transition duration-300 menu-item">Home</a>
+      <a href="about.html" class="transition duration-300 menu-item">About</a>
+      <a href="products.html" class="transition duration-300 menu-item">Products</a>
+      <a href="contact.html" class="transition duration-300 menu-item">Contact</a>
+    </div>
+    <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden" style="background-color:var(--gold-100);" aria-hidden="true">
+    <div class="flex flex-col space-y-3 px-4 py-3">
+      <a href="index.html" class="transition duration-300 menu-item">Home</a>
+      <a href="about.html" class="transition duration-300 menu-item">About</a>
+      <a href="products.html" class="transition duration-300 menu-item">Products</a>
+      <a href="contact.html" class="transition duration-300 menu-item">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle for injected menubar
+  document.addEventListener('DOMContentLoaded', function(){
+    const btn = document.getElementById('menu-btn');
+    const mobile = document.getElementById('mobile-menu');
+    if(!btn || !mobile) return;
+    btn.addEventListener('click', function(){
+      const isHidden = mobile.classList.toggle('hidden');
+      mobile.setAttribute('aria-hidden', isHidden ? 'true' : 'false');
+    });
+    // Close mobile menu when a link is clicked
+    mobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobile.classList.add('hidden');
+        mobile.setAttribute('aria-hidden', 'true');
+      });
+    });
+  });
+</script>
