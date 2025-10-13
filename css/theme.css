@@ -8,11 +8,11 @@
   --primary-200: #fecaca; /* soft red */
   --muted: #6b7280; /* gray for text */
   /* Footer updated to pale cream background (matches snapshot) */
-  --footer-bg: #fff8ec; /* very light cream */
+  --footer-bg: #fdfdfc; /* very light cream */
   --footer-text: var(--primary-900); /* use deep red for headings/important text */
   --footer-accent: var(--primary-500);
   --gold-100: #fffbeb; /* light golden used in contact info (Tailwind amber-100) */
-  --gold-700: #b45309; /* darker gold for text/links (amber-700) */
+  --gold-700: #b45309; /*darker gold for text/links (amber-700)*/
 }
 
 /* Utility classes to map existing amber-* usages to red palette */
@@ -80,7 +80,7 @@
 .accent-line { height: 4px; width: 96px; background: var(--primary-500); margin: 0.5rem auto; }
 
 /* Make sure images in header/footer remain circular; make footer brand slightly larger */
-.brand-img { height: 64px; width: 64px; border-radius: 9999px; object-fit: cover; }
+.brand-img { height: 70px; width: 100px;  object-fit: cover; }
 
 /* Testimonials background (light cream/gold) */
 .bg-testimonials { background-color: var(--gold-100); }
